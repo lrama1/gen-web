@@ -2,6 +2,7 @@ package com.sample.web.domain;
 
 import java.util.HashSet;
 import java.util.Set;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -13,15 +14,11 @@ import javax.persistence.Table;
 
 import org.hibernate.annotations.GenericGenerator;
 
-import com.fasterxml.jackson.annotation.JsonIdentityInfo;
-import com.fasterxml.jackson.annotation.ObjectIdGenerators;
-
 /**
  * RelationshipType entity. @author MyEclipse Persistence Tools
  */
 @Entity
 @Table(name = "RELATIONSHIP_TYPE", schema = "PUBLIC", catalog = "PUBLIC")
-//@JsonIdentityInfo(generator=ObjectIdGenerators.IntSequenceGenerator.class, property="@id")
 public class RelationshipType implements java.io.Serializable {
 
 	// Fields

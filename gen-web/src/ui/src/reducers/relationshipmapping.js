@@ -33,10 +33,12 @@ export const relationshipMapping = (state = initialRelationshipMapping, action) 
         console.log('BLAAA',action.relationshipMapping)
         //relTypeId: action.relationshipMapping.relationshipType.relTypeId
         const relTypeId = action.relationshipMapping.relationship.relationshipType?
-            action.relationshipMapping.relationship.relationshipType.relTypeId: null
+            action.relationshipMapping.relationship.relationshipType.relTypeId: null;
+        const relName = action.relationshipMapping.relationship.relName
         const newState = {
             ...action.relationshipMapping.id,
-            relTypeId: relTypeId
+            relTypeId: relTypeId,
+            relName
         }
         console.log('GGG', newState)
         return newState;

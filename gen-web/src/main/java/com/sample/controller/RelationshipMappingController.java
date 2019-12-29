@@ -16,6 +16,7 @@ import com.sample.web.domain.Relationship;
 //import the domain
 import com.sample.web.domain.RelationshipMapping;
 import com.sample.web.domain.RelationshipMappingId;
+import com.sample.web.domain.RelationshipType;
 import com.sample.web.dto.RelationshipMappingDTO;
 import com.sample.service.RelationshipMappingService;
 import com.sample.common.ListWrapper;
@@ -52,7 +53,9 @@ public class RelationshipMappingController extends BaseController {
 			RelationshipMappingId id = new RelationshipMappingId(null, sourceItemId, null);
 			mapping.setItemBySourceItemId(new Item(sourceItemId,null, null));
 			mapping.setItemByTargetItemId(new Item());
-			mapping.setRelationship(new Relationship());
+			RelationshipType relType = new RelationshipType();
+			Relationship rel = new Relationship("", relType, "");
+			mapping.setRelationship(rel);
 			mapping.setId(id);
 			return mapping;
 		}

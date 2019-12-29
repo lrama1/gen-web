@@ -1,8 +1,8 @@
 package com.sample.web.domain;
 
 import java.util.HashSet;
-import java.util.LinkedHashSet;
 import java.util.Set;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -18,11 +18,11 @@ import javax.persistence.UniqueConstraint;
 import org.hibernate.annotations.GenericGenerator;
 
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 /**
  * Item entity. @author MyEclipse Persistence Tools
+ * Modified by LRAMA 12/28
  */
 @Entity
 @Table(name = "ITEM", schema = "PUBLIC", catalog = "PUBLIC", uniqueConstraints = @UniqueConstraint(columnNames = {
