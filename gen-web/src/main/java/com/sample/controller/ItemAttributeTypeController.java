@@ -1,6 +1,8 @@
 package com.sample.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+
+import java.math.BigDecimal;
 import java.security.Principal;
 import javax.annotation.Resource;
 import org.springframework.web.bind.annotation.RestController;
@@ -45,6 +47,12 @@ public class ItemAttributeTypeController extends BaseController {
 			itemAttrTypeToReturn.setItemAttrTypeName("");
 			ItemAttrTypeDatatype dataType = new ItemAttrTypeDatatype(null, "");
 			itemAttrTypeToReturn.setItemAttrTypeDatatype(dataType);
+			itemAttrTypeToReturn.setItemAttrTypeDesc("");
+			itemAttrTypeToReturn.setItemAttrTypeLength(new BigDecimal(15));
+			itemAttrTypeToReturn.setItemAttrTypeIssearchable(true);
+			itemAttrTypeToReturn.setItemAttrTypeIsRequired(false);
+			itemAttrTypeToReturn.setItemAttrTypeDisplayIndex(new Byte("1"));
+			
 			return itemAttrTypeToReturn;
 		}
 		else

@@ -1,5 +1,5 @@
 import {connect} from 'react-redux';
-import {editRelationshipType, saveRelationshipType} from '../actions/relationshiptype';
+import {editRelationshipType, fetchAllRelationshipTypes, saveRelationshipType} from '../actions/relationshiptype';
 import RelationshipTypeEdit from '../components/RelationshipTypeEdit';
 
 export const mapStateToProps = (state) => {
@@ -15,8 +15,9 @@ export const mapDispatchToProps = (dispatch) => {
             const {name, value} = event.target;
             dispatch(editRelationshipType([name], value))
         },
-        onSaveRelationshipType(url, relationshipType){
-            dispatch(saveRelationshipType(url, relationshipType))
+        async onSaveRelationshipType(url, relationshipType){
+            await dispatch(saveRelationshipType(url, relationshipType))
+            dispatch(fetchAllRelationshipTypes('relationshiptypes'))
         }
     }
 }

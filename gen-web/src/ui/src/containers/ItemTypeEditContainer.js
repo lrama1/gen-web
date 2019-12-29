@@ -20,8 +20,8 @@ export const mapDispatchToProps = (dispatch) => {
             await dispatch(saveItemType(url, itemType));
             dispatch(fetchAllItemTypes('itemtypes'))
         },
-        addNewItemAttributeType(parentItemTypeId){
-            dispatch(fetchItemAttributeType('itemattributetype/-1', parentItemTypeId))
+        addNewItemAttributeType(parentItemTypeId, itemAttrTypeId){
+            dispatch(fetchItemAttributeType('itemattributetype/' + itemAttrTypeId, parentItemTypeId))
         }
     }
 }

@@ -3,6 +3,7 @@ import React from 'react'
 import Col from 'react-bootstrap/Col'
 import Row from 'react-bootstrap/Row'
 import {Fieldset} from "primereact/fieldset";
+import {Button} from "primereact/button";
 
 function ItemTypeEdit({history, selectedItemType, onEditItemType, onSaveItemType, addNewItemAttributeType}) {
 
@@ -12,8 +13,8 @@ function ItemTypeEdit({history, selectedItemType, onEditItemType, onSaveItemType
         event.preventDefault();
     }
 
-    function addNewItemAttributeTypeLocal(parentItemTypeId) {
-        addNewItemAttributeType(parentItemTypeId);
+    function addNewItemAttributeTypeLocal(parentItemTypeId, itemAttrTypeId) {
+        addNewItemAttributeType(parentItemTypeId, itemAttrTypeId);
         history.push({pathname: '/itemattributetype'});
     }
 
@@ -31,6 +32,9 @@ function ItemTypeEdit({history, selectedItemType, onEditItemType, onSaveItemType
                 </Col>
                 <Col>
                     <input id="itemAttrTypeName" value={attribute.itemAttrTypeName} readOnly={true}/>
+                </Col>
+                <Col>
+                    <Button label="Edit" onClick={() => addNewItemAttributeTypeLocal(selectedItemType.itemTypeId, attribute.itemAttrTypeId)}/>
                 </Col>
             </Row>
         )
@@ -60,7 +64,7 @@ function ItemTypeEdit({history, selectedItemType, onEditItemType, onSaveItemType
             {itemAttributeTypeHeader}
             {itemAttributeTypeRows}
             <button id="addNewAttributeType"
-                    onClick={() => addNewItemAttributeTypeLocal(selectedItemType.itemTypeId)}>Add Attr Type
+                    onClick={() => addNewItemAttributeTypeLocal(selectedItemType.itemTypeId, -1)}>Add Attr Type
             </button>
             </Fieldset>
 
