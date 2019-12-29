@@ -3,6 +3,7 @@ import {HashRouter, Route, Link} from 'react-router-dom';
 import 'primereact/resources/themes/nova-light/theme.css';
 import 'primereact/resources/primereact.min.css';
 import 'primeicons/primeicons.css';
+import Container from 'react-bootstrap/Container'
 
 import ItemListContainer from '../containers/ItemListContainer';
 import ItemEditContainer from '../containers/ItemEditContainer';
@@ -27,7 +28,7 @@ function App(props) {
 
     return (
         <HashRouter>
-            <div className="container">
+            <Container>
                 <nav className="navbar navbar-expand-lg navbar-light bg-light">
                     <a className="navbar-brand" href="#">Navbar</a>
                     <button className="navbar-toggler" type="button" data-toggle="collapse"
@@ -56,11 +57,7 @@ function App(props) {
                             </li>
 
                         </ul>
-                        <form className="form-inline my-2 my-lg-0">
-                            <input className="form-control mr-sm-2" type="search" placeholder="Search"
-                                   aria-label="Search"/>
-                            <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                        </form>
+
                     </div>
                 </nav>
 
@@ -85,7 +82,7 @@ function App(props) {
                         <Route path="/relationshipmapping" exact component={RelationshipMappingEditContainer}/>
                     </div>
                 </div>
-            </div>
+            </Container>
         </HashRouter>
     );
 };

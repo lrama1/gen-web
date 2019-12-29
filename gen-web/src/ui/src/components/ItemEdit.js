@@ -88,12 +88,6 @@ function ItemEdit({history, selectedItem, onEditItem, onSaveItem, itemTypes, fet
 
     return (
         <div>
-
-            <div className="form-group">
-                <label htmlFor="itemId">itemId</label>
-                <input className="form-control" id="itemId" name="itemId" value={selectedItem.itemId}
-                       onChange={onEditItem}/>
-            </div>
             <div className="form-group">
                 <label htmlFor="itemCode">itemCode</label>
                 <input className="form-control" id="itemCode" name="itemCode" value={selectedItem.itemCode}

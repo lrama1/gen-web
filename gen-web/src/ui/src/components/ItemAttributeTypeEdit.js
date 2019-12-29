@@ -2,12 +2,13 @@
 import React from 'react'
 import {Dropdown} from 'primereact/dropdown';
 
-function ItemAttributeTypeEdit({selectedItemAttributeType, onEditItemAttributeType, onSaveItemAttributeType}) {
+function ItemAttributeTypeEdit({history, selectedItemAttributeType, onEditItemAttributeType, onSaveItemAttributeType}) {
 
     function buttonEventHandler(event) {
         onSaveItemAttributeType('itemattributetype/' + selectedItemAttributeType.itemAttrTypeId,
             selectedItemAttributeType);
         event.preventDefault();
+        history.goBack();
     }
 
     const dataTypOptions = [
@@ -17,13 +18,6 @@ function ItemAttributeTypeEdit({selectedItemAttributeType, onEditItemAttributeTy
 
     return (
         <div>
-            <form>
-                <div className="form-group">
-                    <label htmlFor="itemAttrTypeId">itemAttrTypeId</label>
-                    <input className="form-control" id="itemAttrTypeId" name="itemAttrTypeId"
-                           value={selectedItemAttributeType.itemAttrTypeId}
-                           onChange={onEditItemAttributeType}/>
-                </div>
                 <div className="form-group">
                     <label htmlFor="itemAttrTypeCode">itemAttrTypeCode</label>
                     <input className="form-control" id="itemAttrTypeCode" name="itemAttrTypeCode"
@@ -79,7 +73,6 @@ function ItemAttributeTypeEdit({selectedItemAttributeType, onEditItemAttributeTy
                 </div>
 
                 <button id="saveButton" onClick={buttonEventHandler}>Save</button>
-            </form>
         </div>
     );
 }

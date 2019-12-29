@@ -1,5 +1,5 @@
 import {connect} from 'react-redux';
-import {editItemType, saveItemType} from '../actions/itemtype';
+import {editItemType, fetchAllItemTypes, saveItemType} from '../actions/itemtype';
 import ItemTypeEdit from '../components/ItemTypeEdit';
 import {fetchItemAttributeType} from "../actions/itemattributetype";
 
@@ -16,8 +16,9 @@ export const mapDispatchToProps = (dispatch) => {
             const {name, value} = event.target;
             dispatch(editItemType([name], value))
         },
-        onSaveItemType(url, itemType){
-            dispatch(saveItemType(url, itemType))
+        async onSaveItemType(url, itemType){
+            await dispatch(saveItemType(url, itemType));
+            dispatch(fetchAllItemTypes('itemtypes'))
         },
         addNewItemAttributeType(parentItemTypeId){
             dispatch(fetchItemAttributeType('itemattributetype/-1', parentItemTypeId))
