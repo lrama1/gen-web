@@ -9,8 +9,10 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 import org.hibernate.annotations.GenericGenerator;
+
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 
@@ -30,6 +32,7 @@ public class ItemAttributeType  implements java.io.Serializable {
     // Fields    
 
      private String itemAttrTypeId;
+     @JsonBackReference(value="lookup-item")
      private ItemType itemTypeByItemAttrTypeLookupListId;
      private ItemAttrTypeDatatype itemAttrTypeDatatype;
      
@@ -42,6 +45,7 @@ public class ItemAttributeType  implements java.io.Serializable {
      private Boolean itemAttrTypeIssearchable;
      private Byte itemAttrTypeDisplayIndex;
      private Boolean itemAttrTypeIsRequired;
+     private String itemTypeIdForLookup;
 
 
     // Constructors
@@ -93,14 +97,15 @@ public class ItemAttributeType  implements java.io.Serializable {
     public void setItemAttrTypeId(String itemAttrTypeId) {
         this.itemAttrTypeId = itemAttrTypeId;
     }
-	@ManyToOne(fetch=FetchType.LAZY)
+	@ManyToOne(fetch=FetchType.EAGER)
         @JoinColumn(name="ITEM_ATTR_TYPE_LOOKUP_LIST_ID")
-
-    public ItemType getItemTypeByItemAttrTypeLookupListId() {
+    public ItemType getItemTypeByItemAttrTypeLookupListId() {		
         return this.itemTypeByItemAttrTypeLookupListId;
     }
     
     public void setItemTypeByItemAttrTypeLookupListId(ItemType itemTypeByItemAttrTypeLookupListId) {
+    	if(itemTypeByItemAttrTypeLookupListId != null)
+    		setItemTypeIdForLookup(itemTypeByItemAttrTypeLookupListId.getItemTypeId());
         this.itemTypeByItemAttrTypeLookupListId = itemTypeByItemAttrTypeLookupListId;
     }
     
@@ -186,13 +191,24 @@ public class ItemAttributeType  implements java.io.Serializable {
     }
     
     @Column(name="ITEM_ATTR_TYPE_IS_REQUIRED", nullable=false, precision=1, scale=0)
-
     public Boolean getItemAttrTypeIsRequired() {
         return this.itemAttrTypeIsRequired;
     }
     
     public void setItemAttrTypeIsRequired(Boolean itemAttrTypeIsRequired) {
         this.itemAttrTypeIsRequired = itemAttrTypeIsRequired;
-    } 
+    }
+
+
+    
+    /* =======================================TRANSIENT FIELDS ===========================================*/
+    @Transient
+	public String getItemTypeIdForLookup() {
+		return itemTypeIdForLookup;
+	}
+
+	public void setItemTypeIdForLookup(String itemTypeIdForLookup) {
+		this.itemTypeIdForLookup = itemTypeIdForLookup;
+	}     
     
 }

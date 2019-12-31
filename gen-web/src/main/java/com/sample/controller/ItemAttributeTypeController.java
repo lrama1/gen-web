@@ -16,11 +16,13 @@ import javax.validation.Valid;
 import com.sample.web.domain.ItemAttrTypeDatatype;
 //import the domain
 import com.sample.web.domain.ItemAttributeType;
+import com.sample.web.domain.ItemType;
 import com.sample.service.ItemAttributeTypeService;
 import com.sample.common.ListWrapper;
 import com.sample.common.NameValuePair;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.Authentication;
+import org.springframework.util.StringUtils;
 import org.springframework.context.MessageSource;
 
 import java.util.List;
@@ -68,7 +70,13 @@ public class ItemAttributeTypeController extends BaseController {
 	@RequestMapping(value = "/itemattributetype/{id}", headers = {
 			"accept=application/json" }, method = RequestMethod.PUT)
 	public ItemAttributeType updateItemAttributeType(@Valid @RequestBody ItemAttributeType itemAttributeType) {
+		ItemType lookupItemType = new ItemType();
+		lookupItemType.setItemTypeId(itemAttributeType.getItemTypeIdForLookup());
+		if(!StringUtils.isEmpty(itemAttributeType.getItemTypeIdForLookup()))
+			itemAttributeType.setItemTypeByItemAttrTypeLookupListId(lookupItemType);
+		
 		itemAttributeTypeService.saveItemAttributeType(itemAttributeType);
+		
 		return itemAttributeType;
 	}
 

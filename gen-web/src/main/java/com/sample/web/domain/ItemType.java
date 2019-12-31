@@ -35,6 +35,8 @@ public class ItemType implements java.io.Serializable {
 			0);
 	private Set<ItemRelationshipRuleBase> itemRelationshipRuleBasesForTargetItemTypeId = new HashSet<ItemRelationshipRuleBase>(
 			0);
+	
+	@JsonManagedReference
 	private Set<ItemAttributeType> itemAttributeTypesForItemAttrTypeLookupListId = new HashSet<ItemAttributeType>(0);
 	
 	@JsonManagedReference
