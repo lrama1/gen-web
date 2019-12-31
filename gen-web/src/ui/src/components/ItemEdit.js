@@ -4,8 +4,13 @@ import {Dropdown} from 'primereact/dropdown';
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import {Fieldset} from 'primereact/fieldset';
+import {renderTree} from "../utils/treeRenderer";
 
-function ItemEdit({history, selectedItem, onEditItem, onSaveItem, itemTypes, fetchItemAttribute, fetchRelationshipMapping, fetchItems}) {
+function ItemEdit({history, selectedItem, onEditItem, onSaveItem, itemTypes, fetchItemAttribute, fetchRelationshipMapping, fetchItems, itemTree}) {
+
+    if(itemTree){
+        renderTree("#itemTree", itemTree)
+    }
 
     function buttonEventHandler(event) {
         onSaveItem('item/' + selectedItem.itemId,
@@ -116,6 +121,9 @@ function ItemEdit({history, selectedItem, onEditItem, onSaveItem, itemTypes, fet
                 <Fieldset legend="Relationships">
                     {relationshipRows}
                     <button onClick={() => addOrEditRelationshipMapping(selectedItem.itemId, -1, -1)}>Add Relationship</button>
+                </Fieldset>
+                <Fieldset legend="Tree">
+                    <div id="itemTree"></div>
                 </Fieldset>
             </div>
 

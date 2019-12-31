@@ -14,6 +14,7 @@ import javax.validation.Valid;
 //import the domain
 import com.sample.web.domain.Item;
 import com.sample.web.domain.ItemType;
+import com.sample.web.dto.TreeNodeDTO;
 import com.sample.service.ItemService;
 import com.sample.common.ListWrapper;
 import com.sample.common.NameValuePair;
@@ -51,6 +52,13 @@ public class ItemController extends BaseController {
 		}
 		else
 			return item;
+	}
+	
+	@RequestMapping(value = "/itemtree/{id}", method = RequestMethod.GET)
+	public TreeNodeDTO getItemTree(@PathVariable("id") String id, Principal principal) {
+		Authentication authenticationToken = (Authentication) principal;
+		return itemService.getTree(id);
+		
 	}
 
 	@RequestMapping(value = "/item", headers = { "accept=application/json" }, method = RequestMethod.POST)

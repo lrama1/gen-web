@@ -1,7 +1,7 @@
 
 import {connect} from 'react-redux';
 import ItemList from '../components/ItemList'
-import {fetchItem, fetchAllItems} from '../actions/item';
+import {fetchItem, fetchAllItems, fetchItemTree} from '../actions/item';
 
 
 export const mapStateToProps = (state) => {
@@ -15,8 +15,9 @@ export const mapStateToProps = (state) => {
 
 export const mapDispatchToProps = (dispatch) => {
     return{
-        fetchItem(url){
+        fetchItem(url, idToEdit){
             dispatch(fetchItem(url))
+            dispatch(fetchItemTree('itemtree/' + idToEdit))
         },
         fetchAllItems(url, first){
             dispatch(fetchAllItems(url, first))

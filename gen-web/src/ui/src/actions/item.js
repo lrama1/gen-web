@@ -34,6 +34,35 @@ export function fetchItem(url){
     }
 }
 
+export const ITEMTREE_FETCH_SUCCESS = 'ITEMTREE_FETCH_SUCCESS';
+export function itemTreeFetchSuccess(itemTree){
+    console.log('DISPATCHING SUCCESS', itemTree );
+    return {
+        type: ITEMTREE_FETCH_SUCCESS,
+        itemTree: itemTree
+    }
+}
+
+export const ITEMTREE_FETCH_ERROR = 'ITEMTREE_FETCH_ERROR';
+export function itemTreeFetchError(error){
+    return {
+        type: ITEMTREE_FETCH_ERROR,
+        error: error
+    }
+}
+
+export function fetchItemTree(url){
+    console.log('Fetch of single itemTree Invoked');
+    return async dispatch => {
+        try{
+            const data = await getRequest(url);
+            dispatch(itemTreeFetchSuccess(data))
+        }catch (e) {
+            dispatch(itemTreeFetchError(true))
+        }
+    }
+}
+
 export const ITEM_EDIT = 'ITEM_EDIT';
 export function editItem(name, value){    
     return {

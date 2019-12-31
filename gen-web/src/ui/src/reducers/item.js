@@ -1,5 +1,11 @@
 
-import {ITEM_FETCH_SUCCESS , ITEM_EDIT, ITEM_SAVE_SUCCESS, ITEM_SAVE_ERROR} from '../actions/item'
+import {
+    ITEM_FETCH_SUCCESS,
+    ITEM_EDIT,
+    ITEM_SAVE_SUCCESS,
+    ITEM_SAVE_ERROR,
+    ITEMTREE_FETCH_SUCCESS
+} from '../actions/item'
 
 const initialItems = {
      records: [],
@@ -34,14 +40,14 @@ export const item = (state = initialItem, action) => {
     if (action.type === ITEM_FETCH_SUCCESS){
         return action.item
         
-    }else if(action.type === ITEM_EDIT){
+    }else if(action.type === ITEM_EDIT) {
         let newState = {}
-        if(action.name[0].indexOf('.') == -1) {
+        if (action.name[0].indexOf('.') == -1) {
             newState = {
                 ...state,
                 [action.name]: action.value
             }
-        }else{
+        } else {
             const names = action.name[0].split(".");
             newState = {
                 ...state
@@ -51,6 +57,11 @@ export const item = (state = initialItem, action) => {
         console.log('Change', newState)
         return newState;
 
+    }else if(action.type === ITEMTREE_FETCH_SUCCESS){
+        return{
+            ...state,
+            itemTree: action.itemTree
+        }
     }else if(action.type === ITEM_SAVE_SUCCESS){
         return action.item;
     }else if(action.type === ITEM_SAVE_ERROR){

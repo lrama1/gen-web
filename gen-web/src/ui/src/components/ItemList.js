@@ -11,7 +11,7 @@ function ItemList({history, fetchItem, fetchAllItems, items, first, totalRecords
     }
 
     function buttonClicked(id) {
-        fetchItem('item/' + id)
+        fetchItem('item/' + id, id)
         //tell route to display the Edit screen
         history.push({pathname: '/item'});
     }

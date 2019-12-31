@@ -8,7 +8,8 @@ export const mapStateToProps = (state) => {
     console.log(state);
     return {
         selectedItem: state.item,
-        itemTypes: state.itemTypes
+        itemTypes: state.itemTypes,
+        itemTree: state.item.itemTree
     };
 };
 
