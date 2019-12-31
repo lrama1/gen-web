@@ -1,13 +1,36 @@
 //DomainDetail-template.js
 import React from 'react'
+import {Dropdown} from "primereact/dropdown";
 
-function ItemAttributeEdit({history, selectedItemAttribute, onEditItemAttribute, onSaveItemAttribute}) {
+function ItemAttributeEdit({history, selectedItemAttribute, onEditItemAttribute, onSaveItemAttribute, lookupItems}) {
 
     function buttonEventHandler(event) {
         onSaveItemAttribute('itemattribute/' + selectedItemAttribute.itemAttrId,
             selectedItemAttribute);
         event.preventDefault();
         history.goBack();
+    }
+
+    function renderAppropriateFieldEditor(){
+        console.log('dd',selectedItemAttribute)
+        if(selectedItemAttribute.itemAttrType.itemTypeIdForLookup){
+            const lookupItemOptions = lookupItems.map(item => {
+                return {
+                    label: item.itemName,
+                    value: item.itemId
+                }
+            })
+            return(
+                <Dropdown name="itemAttrValue" value={selectedItemAttribute.itemAttrValue}
+                          options={lookupItemOptions} onChange={onEditItemAttribute}/>
+            )
+        }else{
+            return(
+                <input className="form-control" id="itemAttrValue" name="itemAttrValue"
+                       value={selectedItemAttribute.itemAttrValue}
+                       onChange={onEditItemAttribute}/>
+            )
+        }
     }
 
     return (
@@ -21,9 +44,7 @@ function ItemAttributeEdit({history, selectedItemAttribute, onEditItemAttribute,
                 </div>
                 <div className="form-group">
                     <label htmlFor="itemAttrValue">itemAttrValue</label>
-                    <input className="form-control" id="itemAttrValue" name="itemAttrValue"
-                           value={selectedItemAttribute.itemAttrValue}
-                           onChange={onEditItemAttribute}/>
+                    {renderAppropriateFieldEditor()}
                 </div>
 
                 <button id="saveButton" onClick={buttonEventHandler}>Save</button>

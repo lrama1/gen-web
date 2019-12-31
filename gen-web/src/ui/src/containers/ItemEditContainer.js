@@ -1,5 +1,5 @@
 import {connect} from 'react-redux';
-import {editItem, saveItem} from '../actions/item';
+import {editItem, fetchAllItems, saveItem} from '../actions/item';
 import ItemEdit from '../components/ItemEdit';
 import {fetchItemAttribute} from "../actions/itemattribute";
 import {fetchRelationshipMapping} from "../actions/relationshipmapping";
@@ -26,6 +26,9 @@ export const mapDispatchToProps = (dispatch) => {
         },
         fetchRelationshipMapping(url){
             dispatch(fetchRelationshipMapping(url))
+        },
+        fetchItems(url){
+            dispatch(fetchAllItems(url))
         }
     }
 }

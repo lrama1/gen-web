@@ -2,11 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="047b95c4-3e3a-4c8f-b90b-c0c49023a2d7" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../main/java/com/sample/controller/ItemAttributeTypeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../main/java/com/sample/controller/ItemAttributeTypeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../main/java/com/sample/controller/ItemAttributeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../main/java/com/sample/controller/ItemAttributeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../main/java/com/sample/web/domain/ItemAttribute.java" beforeDir="false" afterPath="$PROJECT_DIR$/../main/java/com/sample/web/domain/ItemAttribute.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ItemTypeEdit.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ItemTypeEdit.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/ItemTypeEditContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/ItemTypeEditContainer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/RelationshipTypeEditContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/RelationshipTypeEditContainer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ItemAttributeEdit.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ItemAttributeEdit.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ItemEdit.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ItemEdit.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/ItemAttributeEditContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/ItemAttributeEditContainer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/ItemEditContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/ItemEditContainer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducers/itemattribute.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/itemattribute.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../zz-web13/.project" beforeDir="false" afterPath="$PROJECT_DIR$/../../../zz-web13/.project" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -19,12 +22,12 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/ItemTypeEdit.js">
+        <entry file="file://$PROJECT_DIR$/src/components/ItemAttributeEdit.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="15" column="74" selection-start-line="15" selection-start-column="60" selection-end-line="15" selection-end-column="74" />
+            <state relative-caret-position="315">
+              <caret line="23" column="89" selection-start-line="23" selection-start-column="89" selection-end-line="23" selection-end-column="89" />
               <folding>
                 <element signature="e#27#52#0" expanded="true" />
               </folding>
@@ -33,10 +36,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/containers/ItemTypeEditContainer.js">
+        <entry file="file://$PROJECT_DIR$/src/containers/ItemEditContainer.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="22" column="64" selection-start-line="22" selection-start-column="64" selection-end-line="22" selection-end-column="64" />
+            <state relative-caret-position="405">
+              <caret line="27" column="51" lean-forward="true" selection-start-line="27" selection-start-column="51" selection-end-line="27" selection-end-column="51" />
               <folding>
                 <element signature="e#0#36#0" expanded="true" />
               </folding>
@@ -45,22 +48,25 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/containers/RelationshipTypeEditContainer.js">
+        <entry file="file://$PROJECT_DIR$/src/components/ItemEdit.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="19" column="21" selection-start-line="19" selection-start-column="21" selection-end-line="19" selection-end-column="21" />
+            <state relative-caret-position="-1208">
+              <caret line="7" column="40" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="40" />
               <folding>
-                <element signature="e#0#36#0" expanded="true" />
+                <element signature="e#27#52#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/RelationshipTypeEdit.js">
+        <entry file="file://$PROJECT_DIR$/src/containers/ItemAttributeEditContainer.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+            <state relative-caret-position="390">
+              <caret line="26" column="57" lean-forward="true" selection-start-line="26" selection-start-column="57" selection-end-line="26" selection-end-column="57" />
+              <folding>
+                <element signature="e#0#36#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -91,24 +97,25 @@
         <option value="$PROJECT_DIR$/src/actions/relationshiptype.js" />
         <option value="$PROJECT_DIR$/src/components/RelationshipTypeList.js" />
         <option value="$PROJECT_DIR$/src/reducers/item.js" />
-        <option value="$PROJECT_DIR$/src/containers/ItemEditContainer.js" />
         <option value="$PROJECT_DIR$/src/containers/RelationshipMappingEditContainer.js" />
         <option value="$PROJECT_DIR$/src/actions/relationshipmapping.js" />
         <option value="$PROJECT_DIR$/src/components/RelationshipMappingEdit.js" />
         <option value="$PROJECT_DIR$/src/reducers/relationshipmapping.js" />
-        <option value="$PROJECT_DIR$/src/components/ItemAttributeEdit.js" />
-        <option value="$PROJECT_DIR$/src/containers/ItemAttributeEditContainer.js" />
         <option value="$PROJECT_DIR$/src/index.js" />
         <option value="$PROJECT_DIR$/src/index.css" />
         <option value="$PROJECT_DIR$/src/components/ItemList.js" />
-        <option value="$PROJECT_DIR$/src/containers/ItemAttributeTypeEditContainer.js" />
-        <option value="$PROJECT_DIR$/src/components/ItemAttributeTypeEdit.js" />
         <option value="$PROJECT_DIR$/src/components/ItemTypeList.js" />
-        <option value="$PROJECT_DIR$/src/components/ItemEdit.js" />
         <option value="$PROJECT_DIR$/src/components/App.js" />
         <option value="$PROJECT_DIR$/src/components/ItemTypeEdit.js" />
         <option value="$PROJECT_DIR$/src/containers/ItemTypeEditContainer.js" />
         <option value="$PROJECT_DIR$/src/containers/RelationshipTypeEditContainer.js" />
+        <option value="$PROJECT_DIR$/src/containers/ItemAttributeTypeEditContainer.js" />
+        <option value="$PROJECT_DIR$/src/components/ItemAttributeTypeEdit.js" />
+        <option value="$PROJECT_DIR$/src/reducers/itemattribute.js" />
+        <option value="$PROJECT_DIR$/src/containers/ItemEditContainer.js" />
+        <option value="$PROJECT_DIR$/src/components/ItemEdit.js" />
+        <option value="$PROJECT_DIR$/src/containers/ItemAttributeEditContainer.js" />
+        <option value="$PROJECT_DIR$/src/components/ItemAttributeEdit.js" />
       </list>
     </option>
   </component>
@@ -123,6 +130,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -152,11 +160,16 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="containers" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="ui" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ui" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="reducers" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -189,12 +202,13 @@
       <option name="presentableId" value="Default" />
       <updated>1577119805903</updated>
       <workItem from="1577119806981" duration="285000" />
-      <workItem from="1577120859194" duration="58960000" />
+      <workItem from="1577120859194" duration="61458000" />
+      <workItem from="1577801160361" duration="6892000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="59245000" />
+    <option name="totallyTimeSpent" value="68635000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="-2" width="1920" height="1082" extended-state="6" />
@@ -203,7 +217,6 @@
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -215,6 +228,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.25813222" />
+      <window_info anchor="bottom" id="Messages" order="11" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -227,9 +241,6 @@
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/reducers/itemattrtypedatatype.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/actions/itemattributetype.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-489">
@@ -237,13 +248,6 @@
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/reducers/itemattributetype.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="481">
-          <caret line="54" column="24" lean-forward="true" selection-start-line="40" selection-start-column="8" selection-end-line="54" selection-end-column="24" />
         </state>
       </provider>
     </entry>
@@ -339,16 +343,6 @@
     <entry file="file://$PROJECT_DIR$/src/containers/ItemListContainer.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/containers/ItemEditContainer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="26" column="32" selection-start-line="26" selection-start-column="8" selection-end-line="26" selection-end-column="32" />
-          <folding>
-            <element signature="e#0#36#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/containers/RelationshipEditContainer.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
@@ -386,54 +380,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/containers/ItemAttributeEditContainer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" column="41" selection-start-line="25" selection-start-column="41" selection-end-line="25" selection-end-column="41" />
-          <folding>
-            <element signature="e#0#36#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="9" selection-start-line="2" selection-start-column="9" selection-end-line="2" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/index.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="4" column="26" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/ItemAttributeEdit.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="8" lean-forward="true" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/containers/ItemAttributeTypeEditContainer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="44" selection-start-line="21" selection-start-column="44" selection-end-line="21" selection-end-column="44" />
-          <folding>
-            <element signature="e#0#36#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/ItemAttributeTypeEdit.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="20" selection-start-line="20" selection-end-line="20" />
-          <folding>
-            <element signature="e#27#52#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -467,22 +417,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/ItemEdit.js">
+    <entry file="file://$PROJECT_DIR$/src/components/RelationshipTypeEdit.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="82">
-          <caret line="90" selection-start-line="90" selection-end-line="90" />
-          <folding>
-            <element signature="e#27#52#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="150">
+          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/ItemTypeEdit.js">
+    <entry file="file://$PROJECT_DIR$/src/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="15" column="74" selection-start-line="15" selection-start-column="60" selection-end-line="15" selection-end-column="74" />
+        <state relative-caret-position="30">
+          <caret line="2" column="9" selection-start-line="2" selection-start-column="9" selection-end-line="2" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/containers/RelationshipTypeEditContainer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="21" selection-start-line="19" selection-start-column="21" selection-end-line="19" selection-end-column="21" />
           <folding>
-            <element signature="e#27#52#0" expanded="true" />
+            <element signature="e#0#36#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -497,19 +451,103 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/RelationshipTypeEdit.js">
+    <entry file="file://$PROJECT_DIR$/src/components/ItemTypeEdit.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+        <state relative-caret-position="187">
+          <caret line="15" column="74" selection-start-line="15" selection-start-column="60" selection-end-line="15" selection-end-column="74" />
+          <folding>
+            <element signature="e#27#52#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/containers/RelationshipTypeEditContainer.js">
+    <entry file="file://$PROJECT_DIR$/src/reducers/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="21" selection-start-line="19" selection-start-column="21" selection-end-line="19" selection-end-column="21" />
+        <state relative-caret-position="330">
+          <caret line="22" column="25" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="25" />
+          <folding>
+            <element signature="e#0#37#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/reducers/itemattrtypedatatype.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="9" column="34" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/reducers/itemattributetype.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="32" column="37" selection-start-line="32" selection-start-column="37" selection-end-line="32" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/containers/ItemAttributeTypeEditContainer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="23" lean-forward="true" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
           <folding>
             <element signature="e#0#36#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/reducers/itemattribute.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="277">
+          <caret line="24" column="20" selection-start-line="24" selection-start-column="20" selection-end-line="24" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/ItemAttributeTypeEdit.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="502">
+          <caret line="49" column="78" selection-start-line="49" selection-start-column="78" selection-end-line="49" selection-end-column="78" />
+          <folding>
+            <element signature="e#27#52#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/containers/ItemAttributeEditContainer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="26" column="57" lean-forward="true" selection-start-line="26" selection-start-column="57" selection-end-line="26" selection-end-column="57" />
+          <folding>
+            <element signature="e#0#36#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/containers/ItemEditContainer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="27" column="51" lean-forward="true" selection-start-line="27" selection-start-column="51" selection-end-line="27" selection-end-column="51" />
+          <folding>
+            <element signature="e#0#36#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/ItemAttributeEdit.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="23" column="89" selection-start-line="23" selection-start-column="89" selection-end-line="23" selection-end-column="89" />
+          <folding>
+            <element signature="e#27#52#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/ItemEdit.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1208">
+          <caret line="7" column="40" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="40" />
+          <folding>
+            <element signature="e#27#52#0" expanded="true" />
           </folding>
         </state>
       </provider>

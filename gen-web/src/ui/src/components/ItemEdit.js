@@ -5,7 +5,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import {Fieldset} from 'primereact/fieldset';
 
-function ItemEdit({history, selectedItem, onEditItem, onSaveItem, itemTypes, fetchItemAttribute, fetchRelationshipMapping}) {
+function ItemEdit({history, selectedItem, onEditItem, onSaveItem, itemTypes, fetchItemAttribute, fetchRelationshipMapping, fetchItems}) {
 
     function buttonEventHandler(event) {
         onSaveItem('item/' + selectedItem.itemId,
@@ -22,9 +22,10 @@ function ItemEdit({history, selectedItem, onEditItem, onSaveItem, itemTypes, fet
 
     function getAttributeValue(itemAttrTypeId) {
         //console.log('Lookking for ', itemAttrTypeId, selectedItem.itemAttributes)
+        console.log('Getting attribute value for type', itemAttrTypeId);
         for (let index = 0; index < selectedItem.itemAttributes.length; index++) {
-            console.log(selectedItem.itemAttributes[index].itemAttrTypeId, itemAttrTypeId)
-            if (selectedItem.itemAttributes[index].itemAttrTypeId === itemAttrTypeId) {
+            console.log(selectedItem.itemAttributes[index].itemAttrType.itemAttrTypeId, itemAttrTypeId)
+            if (selectedItem.itemAttributes[index].itemAttrType.itemAttrTypeId === itemAttrTypeId) {
                 return selectedItem.itemAttributes[index].itemAttrValue;
             }
         }
@@ -34,8 +35,8 @@ function ItemEdit({history, selectedItem, onEditItem, onSaveItem, itemTypes, fet
     function getAttributeId(itemAttrTypeId) {
         //console.log('Lookking for ', itemAttrTypeId, selectedItem.itemAttributes)
         for (let index = 0; index < selectedItem.itemAttributes.length; index++) {
-            console.log(selectedItem.itemAttributes[index].itemAttrTypeId, itemAttrTypeId)
-            if (selectedItem.itemAttributes[index].itemAttrTypeId === itemAttrTypeId) {
+            console.log(selectedItem.itemAttributes[index].itemAttrType.itemAttrTypeId, itemAttrTypeId)
+            if (selectedItem.itemAttributes[index].itemAttrType.itemAttrTypeId === itemAttrTypeId) {
                 return selectedItem.itemAttributes[index].itemAttrId;
             }
         }
@@ -43,9 +44,10 @@ function ItemEdit({history, selectedItem, onEditItem, onSaveItem, itemTypes, fet
     }
 
 
-    function editItemAttribute(itemAttributeId, itemAttrTypeId, itemId) {
+    async function editItemAttribute(itemAttributeId, itemAttrTypeId, itemId, lookupItemTypeId) {
         //alert(itemAttributeId);
-        fetchItemAttribute('itemattribute/' + itemAttributeId + "/" + itemAttrTypeId + "/" + itemId)
+        await fetchItemAttribute('itemattribute/' + itemAttributeId + "/" + itemAttrTypeId + "/" + itemId)
+        fetchItems('items/' + lookupItemTypeId)
         history.push({pathname: '/itemattribute'});
     }
 
@@ -60,7 +62,8 @@ function ItemEdit({history, selectedItem, onEditItem, onSaveItem, itemTypes, fet
                 </Col>
                 <Col>
                     <button
-                        onClick={() => editItemAttribute(getAttributeId(attribute.itemAttrTypeId), attribute.itemAttrTypeId, selectedItem.itemId)}>Edit
+                        onClick={() => editItemAttribute(getAttributeId(attribute.itemAttrTypeId), attribute.itemAttrTypeId, selectedItem.itemId,
+                            attribute.itemTypeIdForLookup)}>Edit
                     </button>
                 </Col>
             </Row>

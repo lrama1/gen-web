@@ -39,7 +39,8 @@ public class ItemAttribute  implements java.io.Serializable {
      private Item item;
      
      private String itemAttrValue;
-     private String itemAttrTypeId;
+     
+     private ItemAttributeType itemAttrType;
 
 
     // Constructors
@@ -49,18 +50,18 @@ public class ItemAttribute  implements java.io.Serializable {
     }
 
 	/** minimal constructor */
-    public ItemAttribute(String itemAttrId, Item item, String itemAttrTypeId) {
+    public ItemAttribute(String itemAttrId, Item item, ItemAttributeType itemAttrType) {
         this.itemAttrId = itemAttrId;
         this.item = item;
-        this.itemAttrTypeId = itemAttrTypeId;
+        this.itemAttrType = itemAttrType;
     }
     
     /** full constructor */
-    public ItemAttribute(String itemAttrId, Item item, String itemAttrValue, String itemAttrTypeId) {
+    public ItemAttribute(String itemAttrId, Item item, String itemAttrValue, ItemAttributeType itemAttrType) {
         this.itemAttrId = itemAttrId;
         this.item = item;
         this.itemAttrValue = itemAttrValue;
-        this.itemAttrTypeId = itemAttrTypeId;
+        this.itemAttrType = itemAttrType;
     }
 
    
@@ -98,7 +99,18 @@ public class ItemAttribute  implements java.io.Serializable {
         this.itemAttrValue = itemAttrValue;
     }
     
-    @Column(name="ITEM_ATTR_TYPE_ID", nullable=false, length=32)
+    
+    @ManyToOne(fetch=FetchType.EAGER)
+    @JoinColumn(name="ITEM_ATTR_TYPE_ID", nullable=false)
+	public ItemAttributeType getItemAttrType() {
+		return itemAttrType;
+	}
+
+	public void setItemAttrType(ItemAttributeType itemAttrType) {
+		this.itemAttrType = itemAttrType;
+	}
+    
+    /*@Column(name="ITEM_ATTR_TYPE_ID", nullable=false, length=32)
 
     public String getItemAttrTypeId() {
         return this.itemAttrTypeId;
@@ -106,5 +118,8 @@ public class ItemAttribute  implements java.io.Serializable {
     
     public void setItemAttrTypeId(String itemAttrTypeId) {
         this.itemAttrTypeId = itemAttrTypeId;
-    }
+    }*/
+    
+    
+    
 }

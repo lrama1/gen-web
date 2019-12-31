@@ -14,7 +14,9 @@ import javax.validation.Valid;
 import com.sample.web.domain.Item;
 //import the domain
 import com.sample.web.domain.ItemAttribute;
+import com.sample.web.domain.ItemAttributeType;
 import com.sample.service.ItemAttributeService;
+import com.sample.service.ItemAttributeTypeService;
 import com.sample.common.ListWrapper;
 import com.sample.common.NameValuePair;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -29,6 +31,9 @@ public class ItemAttributeController extends BaseController {
 
 	@Autowired
 	ItemAttributeService itemAttributeService;
+	
+	@Autowired
+	ItemAttributeTypeService itemAttributeTypeService;
 
 	@Resource(name = "messageSource")
 	private MessageSource messageSource;
@@ -59,7 +64,10 @@ public class ItemAttributeController extends BaseController {
 			ItemAttribute itemAttributeToReturn =  new ItemAttribute();
 			itemAttributeToReturn.setItemAttrId("");
 			itemAttributeToReturn.setItemAttrValue("");
-			itemAttributeToReturn.setItemAttrTypeId(itemAttrTypeId);
+			
+			ItemAttributeType itemAttrType = itemAttributeTypeService.getItemAttributeType(itemAttrTypeId);
+			itemAttributeToReturn.setItemAttrType(itemAttrType);
+			
 			Item dummyItem = new Item();
 			dummyItem.setItemId(itemId);
 			itemAttributeToReturn.setItem(dummyItem);

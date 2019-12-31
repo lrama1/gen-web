@@ -35,10 +35,26 @@ public class ItemService {
 		results.setCurrentPage(pageNumber - 1);
 		results.setSortedIndicator(new SortedIndicator(sortByAttribute, sortDirection));
 		return results;
-		
-
 	}
 
+	public ListWrapper<Item> getItemsByType(String itemTypeId, int pageNumber, int pageSize, String sortByAttribute, String sortDirection) {
+		//return itemDAO.getItems(pageNumber, pageSize, sortByAttribute, sortDirection);
+
+		PageRequest request = new PageRequest(pageNumber - 1, pageSize);
+		Page<Item> itemPage = itemRepository.findByItemType(itemTypeId, request);
+		//remove relationship mappings so it does not interfere with Jackson
+		for(Item item: itemPage.getContent()) {
+			item.setRelationshipMappingsForSourceItemId(new LinkedHashSet<>());
+		}
+		
+		ListWrapper<Item> results = new ListWrapper<>();
+		results.setRows(itemPage.getContent());
+		results.setTotalRecords(new Long(itemPage.getTotalElements()).intValue());
+		results.setCurrentPage(pageNumber - 1);
+		results.setSortedIndicator(new SortedIndicator(sortByAttribute, sortDirection));
+		return results;
+	}
+	
 	public Item getItem(String id) {
 		return itemRepository.findOne(id);
 	}

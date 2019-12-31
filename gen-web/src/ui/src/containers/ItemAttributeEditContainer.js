@@ -6,7 +6,8 @@ import {fetchItem} from "../actions/item";
 export const mapStateToProps = (state) => {
     console.log(state);
     return {
-        selectedItemAttribute: state.itemAttribute
+        selectedItemAttribute: state.itemAttribute,
+        lookupItems: state.items.records
     };
 };
 

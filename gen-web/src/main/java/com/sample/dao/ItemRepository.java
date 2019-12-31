@@ -13,4 +13,7 @@ public interface ItemRepository extends JpaRepository<Item, String> {
 
 	@Query(value = "SELECT item FROM Item item ORDER BY itemId")
 	Page<Item> findAllItemsWithPaginationX(Pageable pageable);
+	
+	@Query(value = "SELECT item FROM Item item Where item.itemType.itemTypeId = ?1")
+	Page<Item> findByItemType(String itemTypeId, Pageable pageable);
 }

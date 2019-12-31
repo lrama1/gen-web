@@ -21,7 +21,8 @@ export const itemAttributes = (state = initialItemAttributes, action) => {
 
 const initialItemAttribute = {
         itemAttrId: ''    
-            ,itemAttrValue: ''    
+            ,itemAttrValue: '',
+    itemAttrType: {}
     }
 
 export const itemAttribute = (state = initialItemAttribute, action) => {
