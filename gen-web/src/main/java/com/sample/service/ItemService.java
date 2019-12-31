@@ -79,8 +79,10 @@ public class ItemService {
 	public TreeNodeDTO getTree(String itemId) {
 		Item item = itemRepository.findOne(itemId);
 		TreeNodeDTO root = new TreeNodeDTO();
-		root.setName(item.getItemName());
-		generateTree(root, item);
+		if(item != null) {
+			root.setName(item.getItemName());
+			generateTree(root, item);
+		}
 		return root;
 	}
 	
