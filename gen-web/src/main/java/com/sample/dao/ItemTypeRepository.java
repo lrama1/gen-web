@@ -11,9 +11,9 @@ import com.sample.web.domain.ItemType;
 @Repository
 public interface ItemTypeRepository extends JpaRepository<ItemType, String> {
 	
-	@Query(value= "Select * from item_type \n-- #pageable\n",
+	/*@Query(value= "Select * from item_type \n-- #pageable\n",
 			countQuery = "SELECT count(*) FROM item_type", 
 			nativeQuery = true)
-	Page<ItemType> findAllItemTypesNative(Pageable pageable);
+	Page<ItemType> findAllItemTypesNative(Pageable pageable);*/
 
 }

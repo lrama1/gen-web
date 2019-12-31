@@ -22,8 +22,7 @@ public class ItemTypeService {
 		//return itemTypeDAO.getItemTypes(pageNumber, pageSize, sortByAttribute, sortDirection);
 
 		PageRequest request = new PageRequest(pageNumber - 1, pageSize);
-		//Page<ItemType> itemTypePage = itemTypeRepository.findAll(request);
-		Page<ItemType> itemTypePage = itemTypeRepository.findAllItemTypesNative(request);
+		Page<ItemType> itemTypePage = itemTypeRepository.findAll(request);		
 		ListWrapper<ItemType> results = new ListWrapper<>();
 		results.setRows(itemTypePage.getContent());
 		results.setTotalRecords(new Long(itemTypePage.getTotalElements()).intValue());
