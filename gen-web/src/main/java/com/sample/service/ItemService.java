@@ -9,6 +9,7 @@ import org.springframework.data.domain.PageRequest;
 
 //import the domain
 import com.sample.web.domain.Item;
+import com.sample.web.domain.ItemAttribute;
 import com.sample.common.ListWrapper;
 import com.sample.dao.ItemRepository;
 import com.sample.common.SortedIndicator;
@@ -18,6 +19,7 @@ public class ItemService {
 
 	@Autowired
 	ItemRepository itemRepository;
+		
 
 	public ListWrapper<Item> getItems(int pageNumber, int pageSize, String sortByAttribute, String sortDirection) {
 		//return itemDAO.getItems(pageNumber, pageSize, sortByAttribute, sortDirection);
@@ -55,8 +57,16 @@ public class ItemService {
 		return results;
 	}
 	
-	public Item getItem(String id) {
-		return itemRepository.findOne(id);
+	public Item getItem(String id) {		
+		Item item =itemRepository.findOne(id);
+		for(ItemAttribute attribute : item.getItemAttributes()) {
+			if(attribute.getItemAttrType().getItemTypeIdForLookup() != null) {
+				System.out.println("Must retrieve from list**********************" + attribute.getItemAttrType().getItemAttrTypeName());
+				attribute.setItemAttrDisplayValue(itemRepository.findOne(attribute.getItemAttrValue()).getItemName());
+			}
+		}
+		
+		return item;
 	}
 
 	public void saveNewItem(Item item) {

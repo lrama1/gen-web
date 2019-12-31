@@ -26,7 +26,9 @@ function ItemEdit({history, selectedItem, onEditItem, onSaveItem, itemTypes, fet
         for (let index = 0; index < selectedItem.itemAttributes.length; index++) {
             console.log(selectedItem.itemAttributes[index].itemAttrType.itemAttrTypeId, itemAttrTypeId)
             if (selectedItem.itemAttributes[index].itemAttrType.itemAttrTypeId === itemAttrTypeId) {
-                return selectedItem.itemAttributes[index].itemAttrValue;
+                //we return the display value if it contains something
+                return selectedItem.itemAttributes[index].itemAttrDisplayValue ||
+                    selectedItem.itemAttributes[index].itemAttrValue;
             }
         }
         return "";

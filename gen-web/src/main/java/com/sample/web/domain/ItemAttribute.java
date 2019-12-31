@@ -8,6 +8,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 import javax.persistence.UniqueConstraint;
 
 import org.hibernate.annotations.GenericGenerator;
@@ -41,6 +42,8 @@ public class ItemAttribute  implements java.io.Serializable {
      private String itemAttrValue;
      
      private ItemAttributeType itemAttrType;
+     
+     private String itemAttrDisplayValue;
 
 
     // Constructors
@@ -109,7 +112,17 @@ public class ItemAttribute  implements java.io.Serializable {
 	public void setItemAttrType(ItemAttributeType itemAttrType) {
 		this.itemAttrType = itemAttrType;
 	}
+
+	@Transient
+	public String getItemAttrDisplayValue() {
+		return itemAttrDisplayValue;
+	}
+
+	public void setItemAttrDisplayValue(String itemAttrDisplayValue) {
+		this.itemAttrDisplayValue = itemAttrDisplayValue;
+	}
     
+	
     /*@Column(name="ITEM_ATTR_TYPE_ID", nullable=false, length=32)
 
     public String getItemAttrTypeId() {
