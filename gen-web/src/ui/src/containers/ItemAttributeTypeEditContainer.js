@@ -6,7 +6,8 @@ import {fetchItemType} from "../actions/itemtype";
 export const mapStateToProps = (state) => {
     console.log(state);
     return {
-        selectedItemAttributeType: state.itemAttributeType
+        selectedItemAttributeType: state.itemAttributeType,
+        itemTypes: state.itemTypes
     };
 };
 
