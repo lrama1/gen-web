@@ -5,10 +5,11 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import {Fieldset} from 'primereact/fieldset';
 import {renderTree} from "../utils/treeRenderer";
+import {Button} from "primereact/button";
 
 function ItemEdit({history, selectedItem, onEditItem, onSaveItem, itemTypes, fetchItemAttribute, fetchRelationshipMapping, fetchItems, itemTree}) {
 
-    if(itemTree){
+    if (itemTree) {
         renderTree("#itemTree", itemTree)
     }
 
@@ -68,16 +69,14 @@ function ItemEdit({history, selectedItem, onEditItem, onSaveItem, itemTypes, fet
                            readOnly={true}/>
                 </Col>
                 <Col>
-                    <button
-                        onClick={() => editItemAttribute(getAttributeId(attribute.itemAttrTypeId), attribute.itemAttrTypeId, selectedItem.itemId,
-                            attribute.itemTypeIdForLookup)}>Edit
-                    </button>
+                    <Button label="Edit" onClick={() => editItemAttribute(getAttributeId(attribute.itemAttrTypeId), attribute.itemAttrTypeId, selectedItem.itemId,
+                        attribute.itemTypeIdForLookup)}/>
                 </Col>
             </Row>
         )
     });
 
-    function addOrEditRelationshipMapping(sourceItemId, targetItemId, relationshipId){
+    function addOrEditRelationshipMapping(sourceItemId, targetItemId, relationshipId) {
         fetchRelationshipMapping('relationshipmapping/' + sourceItemId + "/" + targetItemId + "/" + relationshipId)
         history.push({pathname: '/relationshipmapping'});
     }
@@ -88,44 +87,48 @@ function ItemEdit({history, selectedItem, onEditItem, onSaveItem, itemTypes, fet
                 <Col>{relMapping.relationship.relationshipType.relTypeName}</Col>
                 <Col>{relMapping.itemByTargetItemId.itemName}</Col>
                 <Col>
-                    <button onClick={() => addOrEditRelationshipMapping(selectedItem.itemId, relMapping.itemByTargetItemId.itemId, relMapping.relationship.relId)}>Edit</button>
+                    <Button label="Edit" onClick={() => addOrEditRelationshipMapping(selectedItem.itemId, relMapping.itemByTargetItemId.itemId, relMapping.relationship.relId)}/>
                 </Col>
             </Row>
         )
     })
 
 
-
     return (
         <div>
             <div className="form-group">
-                <label htmlFor="itemCode">itemCode</label>
+                <label htmlFor="itemCode">Item Code</label>
                 <input className="form-control" id="itemCode" name="itemCode" value={selectedItem.itemCode}
                        onChange={onEditItem}/>
             </div>
             <div className="form-group">
-                <label htmlFor="itemName">itemName</label>
+                <label htmlFor="itemName">Item Name</label>
                 <input className="form-control" id="itemName" name="itemName" value={selectedItem.itemName}
                        onChange={onEditItem}/>
             </div>
 
             <div className="form-group">
-                <Dropdown name="itemType.itemTypeId" value={selectedItem.itemType.itemTypeId}
-                          options={itemTypeOptions} onChange={onEditItem}/>
+                <label htmlFor="itemType">Item Type</label>
+                <Dropdown name="itemType.itemTypeId" id="itemType" value={selectedItem.itemType.itemTypeId}
+                          options={itemTypeOptions} onChange={onEditItem} className="form-control"/>
             </div>
 
-            <div>
-                <Fieldset legend="Attributes">
-                    {itemAttributeRows}
-                </Fieldset>
-                <Fieldset legend="Relationships">
-                    {relationshipRows}
-                    <button onClick={() => addOrEditRelationshipMapping(selectedItem.itemId, -1, -1)}>Add Relationship</button>
-                </Fieldset>
-                <Fieldset legend="Tree">
-                    <div id="itemTree"></div>
-                </Fieldset>
-            </div>
+            <Row>
+                <Col xs={7}>
+                    <Fieldset legend="Attributes">
+                        {itemAttributeRows}
+                    </Fieldset>
+                    <Fieldset legend="Relationships">
+                        {relationshipRows}
+                        <Button label="Add Relationship" onClick={() => addOrEditRelationshipMapping(selectedItem.itemId, -1, -1)}/>
+                    </Fieldset>
+                </Col>
+                <Col xs={5}>
+                    <Fieldset legend="Tree">
+                        <div id="itemTree"></div>
+                    </Fieldset>
+                </Col>
+            </Row>
 
             <button id="saveButton" onClick={buttonEventHandler}>Save</button>
 
