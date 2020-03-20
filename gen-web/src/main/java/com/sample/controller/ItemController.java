@@ -63,14 +63,12 @@ public class ItemController extends BaseController {
 
 	@RequestMapping(value = "/item", headers = { "accept=application/json" }, method = RequestMethod.POST)
 	public Item saveNewItem(@Valid @RequestBody Item item) {
-		itemService.saveNewItem(item);
-		return item;
+		return itemService.saveNewItem(item);
 	}
 
 	@RequestMapping(value = "/item/{id}", headers = { "accept=application/json" }, method = RequestMethod.PUT)
 	public Item updateItem(@Valid @RequestBody Item item) {
-		itemService.saveItem(item);
-		return item;
+		return itemService.saveItem(item);		
 	}
 
 	@RequestMapping("/items")

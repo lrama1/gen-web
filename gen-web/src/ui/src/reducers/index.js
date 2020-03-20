@@ -7,6 +7,7 @@ import { itemAttributes, itemAttribute } from './itemattribute';
 import { relationshipTypes, relationshipType } from './relationshiptype';
 import { relationships, relationship } from './relationship';
 import { relationshipMappings, relationshipMapping } from './relationshipmapping';
+import { itemRelationshipRuleBases, itemRelationshipRuleBase } from './itemrelationshiprulebase';
 
 /*
 By combining reducers, you now have to use the namespace of the reducer
@@ -28,7 +29,9 @@ export default combineReducers({
     relationship,
     relationships,
     relationshipMapping,
-    relationshipMappings
+    relationshipMappings,
+    itemRelationshipRuleBase,
+    itemRelationshipRuleBases
 });
 
  

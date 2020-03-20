@@ -99,11 +99,11 @@ public class ItemService {
 		}
 	}
 
-	public void saveNewItem(Item item) {
-		itemRepository.saveAndFlush(item);
+	public Item saveNewItem(Item item) {
+		return itemRepository.saveAndFlush(item);
 	}
 
-	public void saveItem(Item item) {
-		itemRepository.saveAndFlush(item);
+	public Item saveItem(Item item) {
+		return itemRepository.saveAndFlush(item);
 	}
 }

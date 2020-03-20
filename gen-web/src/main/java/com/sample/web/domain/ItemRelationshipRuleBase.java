@@ -3,11 +3,14 @@ package com.sample.web.domain;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
+
+import org.hibernate.annotations.GenericGenerator;
 
 
 /**
@@ -26,10 +29,12 @@ public class ItemRelationshipRuleBase  implements java.io.Serializable {
     // Fields    
 
      private String itemRelRuleBaseId;
-     private ItemType itemTypeBySourceItemTypeId;
-     private ItemType itemTypeByTargetItemTypeId;
+     private ItemType sourceItemType;
+     private ItemType targetItemType;
      private RelationshipType relationshipType;
      private String itemRelRuleBaseDesc;
+     private String repeatLowerBound;
+     private String repeatUpperBound;
 
 
     // Constructors
@@ -40,10 +45,10 @@ public class ItemRelationshipRuleBase  implements java.io.Serializable {
 
     
     /** full constructor */
-    public ItemRelationshipRuleBase(String itemRelRuleBaseId, ItemType itemTypeBySourceItemTypeId, ItemType itemTypeByTargetItemTypeId, RelationshipType relationshipType, String itemRelRuleBaseDesc) {
+    public ItemRelationshipRuleBase(String itemRelRuleBaseId, ItemType sourceItemType, ItemType targetItemType, RelationshipType relationshipType, String itemRelRuleBaseDesc) {
         this.itemRelRuleBaseId = itemRelRuleBaseId;
-        this.itemTypeBySourceItemTypeId = itemTypeBySourceItemTypeId;
-        this.itemTypeByTargetItemTypeId = itemTypeByTargetItemTypeId;
+        this.sourceItemType = sourceItemType;
+        this.targetItemType = targetItemType;
         this.relationshipType = relationshipType;
         this.itemRelRuleBaseDesc = itemRelRuleBaseDesc;
     }
@@ -51,9 +56,9 @@ public class ItemRelationshipRuleBase  implements java.io.Serializable {
    
     // Property accessors
     @Id 
-    
+    @GeneratedValue(generator = "system-uuid")
+    @GenericGenerator(name = "system-uuid", strategy="uuid")
     @Column(name="ITEM_REL_RULE_BASE_ID", unique=true, nullable=false, length=32)
-
     public String getItemRelRuleBaseId() {
         return this.itemRelRuleBaseId;
     }
@@ -61,29 +66,28 @@ public class ItemRelationshipRuleBase  implements java.io.Serializable {
     public void setItemRelRuleBaseId(String itemRelRuleBaseId) {
         this.itemRelRuleBaseId = itemRelRuleBaseId;
     }
-	@ManyToOne(fetch=FetchType.LAZY)
+	@ManyToOne(fetch=FetchType.EAGER)
         @JoinColumn(name="SOURCE_ITEM_TYPE_ID", nullable=false)
-
-    public ItemType getItemTypeBySourceItemTypeId() {
-        return this.itemTypeBySourceItemTypeId;
+    public ItemType getSourceItemType() {
+        return this.sourceItemType;
     }
     
-    public void setItemTypeBySourceItemTypeId(ItemType itemTypeBySourceItemTypeId) {
-        this.itemTypeBySourceItemTypeId = itemTypeBySourceItemTypeId;
+    public void setSourceItemType(ItemType itemTypeBySourceItemTypeId) {
+        this.sourceItemType = itemTypeBySourceItemTypeId;
     }
-	@ManyToOne(fetch=FetchType.LAZY)
+    
+	@ManyToOne(fetch=FetchType.EAGER)
         @JoinColumn(name="TARGET_ITEM_TYPE_ID", nullable=false)
-
-    public ItemType getItemTypeByTargetItemTypeId() {
-        return this.itemTypeByTargetItemTypeId;
+    public ItemType getTargetItemType() {
+        return this.targetItemType;
     }
     
-    public void setItemTypeByTargetItemTypeId(ItemType itemTypeByTargetItemTypeId) {
-        this.itemTypeByTargetItemTypeId = itemTypeByTargetItemTypeId;
+    public void setTargetItemType(ItemType itemTypeByTargetItemTypeId) {
+        this.targetItemType = itemTypeByTargetItemTypeId;
     }
-	@ManyToOne(fetch=FetchType.LAZY)
+    
+	@ManyToOne(fetch=FetchType.EAGER)
         @JoinColumn(name="REL_TYPE_ID", nullable=false)
-
     public RelationshipType getRelationshipType() {
         return this.relationshipType;
     }
@@ -93,7 +97,6 @@ public class ItemRelationshipRuleBase  implements java.io.Serializable {
     }
     
     @Column(name="ITEM_REL_RULE_BASE_DESC", nullable=false, length=256)
-
     public String getItemRelRuleBaseDesc() {
         return this.itemRelRuleBaseDesc;
     }
@@ -101,13 +104,25 @@ public class ItemRelationshipRuleBase  implements java.io.Serializable {
     public void setItemRelRuleBaseDesc(String itemRelRuleBaseDesc) {
         this.itemRelRuleBaseDesc = itemRelRuleBaseDesc;
     }
-   
+
+    @Column(name="REPEAT_LOWER_BOUND", nullable=false, length=10)
+	public String getRepeatLowerBound() {
+		return repeatLowerBound;
+	}
 
 
+	public void setRepeatLowerBound(String repeatLowerBound) {
+		this.repeatLowerBound = repeatLowerBound;
+	}
+
+	@Column(name="REPEAT_UPPER_BOUND", nullable=false, length=10)
+	public String getRepeatUpperBound() {
+		return repeatUpperBound;
+	}
 
 
-
-
-
+	public void setRepeatUpperBound(String repeatUpperBound) {
+		this.repeatUpperBound = repeatUpperBound;
+	}
 
 }

@@ -15,6 +15,7 @@ import javax.persistence.UniqueConstraint;
 import org.hibernate.annotations.GenericGenerator;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 /**
@@ -31,8 +32,12 @@ public class ItemType implements java.io.Serializable {
 	private String itemTypeCode;
 	private String itemTypeName;
 	private String itemTypeDesc;
+	
+	@JsonIgnore
 	private Set<ItemRelationshipRuleBase> itemRelationshipRuleBasesForSourceItemTypeId = new HashSet<ItemRelationshipRuleBase>(
 			0);
+	
+	@JsonIgnore
 	private Set<ItemRelationshipRuleBase> itemRelationshipRuleBasesForTargetItemTypeId = new HashSet<ItemRelationshipRuleBase>(
 			0);
 	
@@ -119,8 +124,7 @@ public class ItemType implements java.io.Serializable {
 		this.itemTypeDesc = itemTypeDesc;
 	}
 
-	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "itemTypeBySourceItemTypeId")
-
+	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "sourceItemType")
 	public Set<ItemRelationshipRuleBase> getItemRelationshipRuleBasesForSourceItemTypeId() {
 		return this.itemRelationshipRuleBasesForSourceItemTypeId;
 	}
@@ -130,8 +134,7 @@ public class ItemType implements java.io.Serializable {
 		this.itemRelationshipRuleBasesForSourceItemTypeId = itemRelationshipRuleBasesForSourceItemTypeId;
 	}
 
-	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "itemTypeByTargetItemTypeId")
-
+	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "targetItemType")
 	public Set<ItemRelationshipRuleBase> getItemRelationshipRuleBasesForTargetItemTypeId() {
 		return this.itemRelationshipRuleBasesForTargetItemTypeId;
 	}

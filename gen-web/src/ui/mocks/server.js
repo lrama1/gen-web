@@ -75,5 +75,13 @@ app.get('/gen-web/relationshipmapping/:relId', (req, res) =>{
     const returnVal = jsonQuery('rows[relId=' + req.params.relId + ']',{data: relationshipmappings})
     return res.json(returnVal.value)
 })
+const itemrelationshiprulebases = require('./ItemRelationshipRuleBases.json')
+app.get('/gen-web/itemrelationshiprulebases', (req, res) =>{
+    return res.json(itemrelationshiprulebases)
+})
+app.get('/gen-web/itemrelationshiprulebase/:itemRelRuleBaseId', (req, res) =>{
+    const returnVal = jsonQuery('rows[itemRelRuleBaseId=' + req.params.itemRelRuleBaseId + ']',{data: itemrelationshiprulebases})
+    return res.json(returnVal.value)
+})
 app.listen(8000)
 console.log('Listening on port 8000')

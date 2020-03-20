@@ -247,3 +247,15 @@ ALTER TABLE ITEM ADD CONSTRAINT ITEM_R01 FOREIGN KEY(ITEM_TYPE_ID) REFERENCES IT
 
 */
 
+
+/*
+CREATE TABLE itemRelationshipRuleBase (
+item_rel_rule_base_id VARCHAR(64) PRIMARY KEY
+,source_item_type_id VARCHAR(64)
+,target_item_type_id VARCHAR(64)
+,rel_type_id VARCHAR(64)
+,item_rel_rule_base_desc VARCHAR(64)
+,repeat_lower_bound VARCHAR(64)
+,repeat_upper_bound VARCHAR(64)
+);
+*/

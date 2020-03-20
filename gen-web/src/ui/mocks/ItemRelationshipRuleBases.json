@@ -1,0 +1,145 @@
+{
+  "rows": [
+        {
+                            "itemRelRuleBaseId": "Sample-itemRelRuleBaseId-0",
+                              "sourceItemTypeId": "Sample-sourceItemTypeId-0",
+                              "targetItemTypeId": "Sample-targetItemTypeId-0",
+                              "relTypeId": "Sample-relTypeId-0",
+                              "itemRelRuleBaseDesc": "Sample-itemRelRuleBaseDesc-0",
+                              "repeatLowerBound": "Sample-repeatLowerBound-0",
+                              "repeatUpperBound": "Sample-repeatUpperBound-0"
+                  }
+        ,
+            {
+                            "itemRelRuleBaseId": "Sample-itemRelRuleBaseId-1",
+                              "sourceItemTypeId": "Sample-sourceItemTypeId-1",
+                              "targetItemTypeId": "Sample-targetItemTypeId-1",
+                              "relTypeId": "Sample-relTypeId-1",
+                              "itemRelRuleBaseDesc": "Sample-itemRelRuleBaseDesc-1",
+                              "repeatLowerBound": "Sample-repeatLowerBound-1",
+                              "repeatUpperBound": "Sample-repeatUpperBound-1"
+                  }
+        ,
+            {
+                            "itemRelRuleBaseId": "Sample-itemRelRuleBaseId-2",
+                              "sourceItemTypeId": "Sample-sourceItemTypeId-2",
+                              "targetItemTypeId": "Sample-targetItemTypeId-2",
+                              "relTypeId": "Sample-relTypeId-2",
+                              "itemRelRuleBaseDesc": "Sample-itemRelRuleBaseDesc-2",
+                              "repeatLowerBound": "Sample-repeatLowerBound-2",
+                              "repeatUpperBound": "Sample-repeatUpperBound-2"
+                  }
+        ,
+            {
+                            "itemRelRuleBaseId": "Sample-itemRelRuleBaseId-3",
+                              "sourceItemTypeId": "Sample-sourceItemTypeId-3",
+                              "targetItemTypeId": "Sample-targetItemTypeId-3",
+                              "relTypeId": "Sample-relTypeId-3",
+                              "itemRelRuleBaseDesc": "Sample-itemRelRuleBaseDesc-3",
+                              "repeatLowerBound": "Sample-repeatLowerBound-3",
+                              "repeatUpperBound": "Sample-repeatUpperBound-3"
+                  }
+        ,
+            {
+                            "itemRelRuleBaseId": "Sample-itemRelRuleBaseId-4",
+                              "sourceItemTypeId": "Sample-sourceItemTypeId-4",
+                              "targetItemTypeId": "Sample-targetItemTypeId-4",
+                              "relTypeId": "Sample-relTypeId-4",
+                              "itemRelRuleBaseDesc": "Sample-itemRelRuleBaseDesc-4",
+                              "repeatLowerBound": "Sample-repeatLowerBound-4",
+                              "repeatUpperBound": "Sample-repeatUpperBound-4"
+                  }
+        ,
+            {
+                            "itemRelRuleBaseId": "Sample-itemRelRuleBaseId-5",
+                              "sourceItemTypeId": "Sample-sourceItemTypeId-5",
+                              "targetItemTypeId": "Sample-targetItemTypeId-5",
+                              "relTypeId": "Sample-relTypeId-5",
+                              "itemRelRuleBaseDesc": "Sample-itemRelRuleBaseDesc-5",
+                              "repeatLowerBound": "Sample-repeatLowerBound-5",
+                              "repeatUpperBound": "Sample-repeatUpperBound-5"
+                  }
+        ,
+            {
+                            "itemRelRuleBaseId": "Sample-itemRelRuleBaseId-6",
+                              "sourceItemTypeId": "Sample-sourceItemTypeId-6",
+                              "targetItemTypeId": "Sample-targetItemTypeId-6",
+                              "relTypeId": "Sample-relTypeId-6",
+                              "itemRelRuleBaseDesc": "Sample-itemRelRuleBaseDesc-6",
+                              "repeatLowerBound": "Sample-repeatLowerBound-6",
+                              "repeatUpperBound": "Sample-repeatUpperBound-6"
+                  }
+        ,
+            {
+                            "itemRelRuleBaseId": "Sample-itemRelRuleBaseId-7",
+                              "sourceItemTypeId": "Sample-sourceItemTypeId-7",
+                              "targetItemTypeId": "Sample-targetItemTypeId-7",
+                              "relTypeId": "Sample-relTypeId-7",
+                              "itemRelRuleBaseDesc": "Sample-itemRelRuleBaseDesc-7",
+                              "repeatLowerBound": "Sample-repeatLowerBound-7",
+                              "repeatUpperBound": "Sample-repeatUpperBound-7"
+                  }
+        ,
+            {
+                            "itemRelRuleBaseId": "Sample-itemRelRuleBaseId-8",
+                              "sourceItemTypeId": "Sample-sourceItemTypeId-8",
+                              "targetItemTypeId": "Sample-targetItemTypeId-8",
+                              "relTypeId": "Sample-relTypeId-8",
+                              "itemRelRuleBaseDesc": "Sample-itemRelRuleBaseDesc-8",
+                              "repeatLowerBound": "Sample-repeatLowerBound-8",
+                              "repeatUpperBound": "Sample-repeatUpperBound-8"
+                  }
+        ,
+            {
+                            "itemRelRuleBaseId": "Sample-itemRelRuleBaseId-9",
+                              "sourceItemTypeId": "Sample-sourceItemTypeId-9",
+                              "targetItemTypeId": "Sample-targetItemTypeId-9",
+                              "relTypeId": "Sample-relTypeId-9",
+                              "itemRelRuleBaseDesc": "Sample-itemRelRuleBaseDesc-9",
+                              "repeatLowerBound": "Sample-repeatLowerBound-9",
+                              "repeatUpperBound": "Sample-repeatUpperBound-9"
+                  }
+        ,
+            {
+                            "itemRelRuleBaseId": "Sample-itemRelRuleBaseId-10",
+                              "sourceItemTypeId": "Sample-sourceItemTypeId-10",
+                              "targetItemTypeId": "Sample-targetItemTypeId-10",
+                              "relTypeId": "Sample-relTypeId-10",
+                              "itemRelRuleBaseDesc": "Sample-itemRelRuleBaseDesc-10",
+                              "repeatLowerBound": "Sample-repeatLowerBound-10",
+                              "repeatUpperBound": "Sample-repeatUpperBound-10"
+                  }
+        ,
+            {
+                            "itemRelRuleBaseId": "Sample-itemRelRuleBaseId-11",
+                              "sourceItemTypeId": "Sample-sourceItemTypeId-11",
+                              "targetItemTypeId": "Sample-targetItemTypeId-11",
+                              "relTypeId": "Sample-relTypeId-11",
+                              "itemRelRuleBaseDesc": "Sample-itemRelRuleBaseDesc-11",
+                              "repeatLowerBound": "Sample-repeatLowerBound-11",
+                              "repeatUpperBound": "Sample-repeatUpperBound-11"
+                  }
+        ,
+            {
+                            "itemRelRuleBaseId": "Sample-itemRelRuleBaseId-12",
+                              "sourceItemTypeId": "Sample-sourceItemTypeId-12",
+                              "targetItemTypeId": "Sample-targetItemTypeId-12",
+                              "relTypeId": "Sample-relTypeId-12",
+                              "itemRelRuleBaseDesc": "Sample-itemRelRuleBaseDesc-12",
+                              "repeatLowerBound": "Sample-repeatLowerBound-12",
+                              "repeatUpperBound": "Sample-repeatUpperBound-12"
+                  }
+        ,
+            {
+                            "itemRelRuleBaseId": "Sample-itemRelRuleBaseId-13",
+                              "sourceItemTypeId": "Sample-sourceItemTypeId-13",
+                              "targetItemTypeId": "Sample-targetItemTypeId-13",
+                              "relTypeId": "Sample-relTypeId-13",
+                              "itemRelRuleBaseDesc": "Sample-itemRelRuleBaseDesc-13",
+                              "repeatLowerBound": "Sample-repeatLowerBound-13",
+                              "repeatUpperBound": "Sample-repeatUpperBound-13"
+                  }
+          ],
+  "totalRecords": 14,
+  "lastPage": 2
+}

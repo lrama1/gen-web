@@ -22,6 +22,9 @@ import RelationshipListContainer from '../containers/RelationshipListContainer';
 import RelationshipEditContainer from '../containers/RelationshipEditContainer';
 import RelationshipMappingListContainer from '../containers/RelationshipMappingListContainer';
 import RelationshipMappingEditContainer from '../containers/RelationshipMappingEditContainer';
+import ItemRelationshipRuleBaseListContainer from '../containers/ItemRelationshipRuleBaseListContainer';
+import ItemRelationshipRuleBaseEditContainer from '../containers/ItemRelationshipRuleBaseEditContainer';
+
 
 
 function App(props) {
@@ -55,6 +58,7 @@ function App(props) {
                             <li><Link className="nav-link" to="/relationshiptypes"
                                       onClick={() => props.fetchAllRelationshipTypes('/relationshiptypes?page=1&per_page=10')}>RelationshipType</Link>
                             </li>
+<li><Link  className="nav-link" to="/itemrelationshiprulebases"  onClick={() => props.fetchAllItemRelationshipRuleBases('/itemrelationshiprulebases?page=1&per_page=10')} >ItemRelationshipRuleBase</Link></li>
 
                         </ul>
 
@@ -80,6 +84,8 @@ function App(props) {
                         <Route path="/relationship" exact component={RelationshipEditContainer}/>
                         <Route path="/relationshipmappings" exact component={RelationshipMappingListContainer}/>
                         <Route path="/relationshipmapping" exact component={RelationshipMappingEditContainer}/>
+<Route path="/itemrelationshiprulebases" exact component={ItemRelationshipRuleBaseListContainer}/>
+<Route path="/itemrelationshiprulebase" exact component={ItemRelationshipRuleBaseEditContainer}/>
                     </div>
                 </div>
             </Container>

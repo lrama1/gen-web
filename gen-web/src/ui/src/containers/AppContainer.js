@@ -8,7 +8,9 @@ import {fetchAllItemAttrTypeDatatypes} from '../actions/itemattrtypedatatype'
 import {fetchAllItemAttributes} from '../actions/itemattribute'
 import {fetchAllRelationshipTypes} from '../actions/relationshiptype'
 import {fetchAllRelationships} from '../actions/relationship'
-import {fetchAllRelationshipMappings} from '../actions/relationshipmapping'; 
+import {fetchAllRelationshipMappings} from '../actions/relationshipmapping'
+import {fetchAllItemRelationshipRuleBases} from '../actions/itemrelationshiprulebase'; 
+; 
 ; 
 ; 
 ; 
@@ -32,7 +34,8 @@ const mapDispatchToProps = (dispatch) => {
 	    fetchAllItemAttributes: (url) => dispatch(fetchAllItemAttributes(url)),
 	    fetchAllRelationshipTypes: (url) => dispatch(fetchAllRelationshipTypes(url)),
 	    fetchAllRelationships: (url) => dispatch(fetchAllRelationships(url)),
-	    fetchAllRelationshipMappings: (url) => dispatch(fetchAllRelationshipMappings(url))
+	    fetchAllRelationshipMappings: (url) => dispatch(fetchAllRelationshipMappings(url)),
+	    fetchAllItemRelationshipRuleBases: (url) => dispatch(fetchAllItemRelationshipRuleBases(url))
     }
 }
 export default connect(mapStateToProps, mapDispatchToProps)(App)

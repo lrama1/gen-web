@@ -29,7 +29,7 @@ public class RelationshipType implements java.io.Serializable {
 	private String relTypeDesc;
 	private Set<RelationshipAttributeType> relationshipAttributeTypes = new HashSet<RelationshipAttributeType>(0);	
 	//private Set<Relationship> relationships = new HashSet<Relationship>(0);
-	private Set<ItemRelationshipRuleBase> itemRelationshipRuleBases = new HashSet<ItemRelationshipRuleBase>(0);
+	//private Set<ItemRelationshipRuleBase> itemRelationshipRuleBases = new HashSet<ItemRelationshipRuleBase>(0);
 
 	// Constructors
 
@@ -54,7 +54,7 @@ public class RelationshipType implements java.io.Serializable {
 		this.relTypeDesc = relTypeDesc;
 		this.relationshipAttributeTypes = relationshipAttributeTypes;
 		//this.relationships = relationships;
-		this.itemRelationshipRuleBases = itemRelationshipRuleBases;
+		//this.itemRelationshipRuleBases = itemRelationshipRuleBases;
 	}
 
 	// Property accessors
@@ -123,14 +123,14 @@ public class RelationshipType implements java.io.Serializable {
 	}
 	*/
 
-	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "relationshipType")
-
-	public Set<ItemRelationshipRuleBase> getItemRelationshipRuleBases() {
-		return this.itemRelationshipRuleBases;
-	}
-
-	public void setItemRelationshipRuleBases(Set<ItemRelationshipRuleBase> itemRelationshipRuleBases) {
-		this.itemRelationshipRuleBases = itemRelationshipRuleBases;
-	}
+//	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "relationshipType")
+//
+//	public Set<ItemRelationshipRuleBase> getItemRelationshipRuleBases() {
+//		return this.itemRelationshipRuleBases;
+//	}
+//
+//	public void setItemRelationshipRuleBases(Set<ItemRelationshipRuleBase> itemRelationshipRuleBases) {
+//		this.itemRelationshipRuleBases = itemRelationshipRuleBases;
+//	}
 
 }
